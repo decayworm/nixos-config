@@ -13,6 +13,7 @@
   programs.nix-ld.enable = true;  
   programs.fish.enable = true;
   programs.command-not-found.enable = false;
+  programs.niri.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
