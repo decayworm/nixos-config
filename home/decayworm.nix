@@ -1,16 +1,17 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ./modules/packages.nix
+    ./modules/fish.nix
+    ./modules/starship.nix
+    ./modules/git.nix
+  ];
+
   home.username = "decayworm";
   home.homeDirectory = "/home/decayworm";
 
   home.stateVersion = "25.05";
 
   programs.home-manager.enable = true;
-
-  programs.git = {
-    enable = true;
-    userName = "decayworm";
-    userEmail = "bogdan13049@gmail.com";
-  };
 }

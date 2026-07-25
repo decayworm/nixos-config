@@ -5,7 +5,14 @@
 { config, pkgs, ... }:
 
 {
-  
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
+  programs.nix-ld.enable = true;  
+  programs.fish.enable = true;
+  programs.command-not-found.enable = false;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -16,7 +23,13 @@
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
+  networking.hosts = {
+    "151.101.65.91" = [ 
+      "cache.nixos.org"
+      "channels.nixos.org"
+      "releases.nixos.org"
+    ];
+  };
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -44,8 +57,9 @@
 
   # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "us";
-    variant = "";
+    layout = "us, ru";
+    variant = ",";
+    options = "grp:alt_shift_toggle";
   };
   services.xserver.enable = true;
   services.xserver.displayManager.gdm.enable = true;
@@ -56,6 +70,7 @@
     isNormalUser = true;
     description = "decayworm";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.fish; 
     packages = with pkgs; [];
   };
 
@@ -71,6 +86,7 @@
     fastfetch
     wget
     btop
+    firefox
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
