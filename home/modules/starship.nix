@@ -7,7 +7,7 @@
       add_newline = false;
 
       format = ''
-        [❄ ](bold blue)$directory$git_branch$git_status$nix_shell$cmd_duration
+        [ ](bold blue)$directory$git_branch$git_status$nix_shell$cmd_duration
         $character
       '';
 
@@ -19,7 +19,7 @@
       };
 
       git_branch = {
-        symbol = "✿ ";
+        symbol = "🐧 ";
         style = "bold purple";
         format = "on [$symbol$branch]($style) ";
       };
@@ -30,7 +30,7 @@
       };
 
       nix_shell = {
-        symbol = "♥ ";
+        symbol = " ";
         style = "bold blue";
         format = "via [$symbol$name]($style) ";
       };
