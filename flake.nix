@@ -8,9 +8,13 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    noctalia = {
+      url = "github:noctalia-dev/noctalia";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }:
+  outputs = { self, nixpkgs, home-manager, noctalia, ... }:
   {
     nixosConfigurations.desktop =
       nixpkgs.lib.nixosSystem {
@@ -25,7 +29,12 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
-            home-manager.users.decayworm = import ./home/decayworm.nix;
+            home-manager.users.decayworm = {
+              imports = [
+                noctalia.homeModules.default
+                ./home/decayworm.nix
+              ];
+            };
           }
         ];
       };

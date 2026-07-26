@@ -21,7 +21,5 @@
     lazygit
     lazydocker
     jq
-    fuzzel
-    waybar
   ];
 }

@@ -7,6 +7,8 @@
     ./modules/starship.nix
     ./modules/git.nix
     ./modules/kitty.nix
+    ./modules/niri.nix
+    ./modules/noctalia.nix
   ];
 
   home.username = "decayworm";
