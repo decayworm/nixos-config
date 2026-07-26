@@ -23,6 +23,7 @@
         modules = [
           ./hosts/desktop/hardware-configuration.nix
           ./hosts/desktop/configuration.nix
+          ./hosts/desktop/gaming.nix
 
           home-manager.nixosModules.home-manager
           {

@@ -21,5 +21,6 @@
     lazygit
     lazydocker
     jq
+    xwayland-satellite
   ];
 }
