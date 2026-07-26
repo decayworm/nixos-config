@@ -27,6 +27,7 @@
   environment.systemPackages = with pkgs; [
     mangohud
     lutris
+    heroic
   ];
 
   hardware.graphics = {
