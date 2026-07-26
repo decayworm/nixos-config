@@ -9,6 +9,7 @@
     ./modules/kitty.nix
     ./modules/niri.nix
     ./modules/noctalia.nix
+    ./modules/appearance.nix
   ];
 
   home.username = "decayworm";
