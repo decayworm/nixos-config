@@ -117,9 +117,13 @@ input {
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Layout
+window-rule {
+    geometry-corner-radius 10
+    clip-to-geometry true
+}
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 16
+    gaps 12
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -167,21 +171,9 @@ layout {
         // off
 
         // How many logical pixels the ring extends out from the windows.
-        width 4
-
-        // Colors can be set in a variety of ways:
-        // - CSS named colors: "red"
-        // - RGB hex: "#rgb", "#rgba", "#rrggbb", "#rrggbbaa"
-        // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
-
-        // Color of the ring on the active monitor.
-        active-color "#7fc8ff"
-
-        // Color of the ring on inactive monitors.
-        //
-        // The focus ring only draws around the active window, so the only place
-        // where you can see its inactive-color is on other monitors.
-        inactive-color "#505050"
+        width 3
+        active-color "#89b4fa"
+        inactive-color "#45475a"
 
         // You can also use gradients. They take precedence over solid colors.
         // Gradients are rendered the same as CSS linear-gradient(angle, from, to).
@@ -205,9 +197,9 @@ layout {
         // If you enable the border, you probably want to disable the focus ring.
         off
 
-        width 4
-        active-color "#ffc87f"
-        inactive-color "#505050"
+        //width 4
+        //active-color "#ffc87f"
+        //inactive-color "#505050"
 
         // Color of the border around windows that request your attention.
         urgent-color "#9b0000"
@@ -223,7 +215,7 @@ layout {
     // You can enable drop shadows for windows.
     shadow {
         // Uncomment the next line to enable shadows.
-        // on
+        on
 
         // By default, the shadow draws only around its window, and not behind it.
         // Uncomment this setting to make the shadow draw behind its window.
@@ -309,7 +301,7 @@ animations {
     // off
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
-    // slowdown 3.0
+    slowdown 0.85
 }
 
 // Window rules let you adjust behavior for individual windows.
@@ -355,6 +347,25 @@ window-rule {
 }
 
 binds {
+    // Открыть выбор обоев
+    Mod+Shift+W repeat=false {
+        spawn "noctalia" "msg" "panel-toggle" "wallpaper";
+    }
+
+    // Следующие обои без открытия меню
+    Mod+Alt+N repeat=false {
+        spawn "noctalia" "msg" "wallpaper-next";
+    }
+
+    // Предыдущие обои
+    Mod+Alt+P repeat=false {
+        spawn "noctalia" "msg" "wallpaper-previous";
+    }
+
+    // Случайные обои
+    Mod+Alt+R repeat=false {
+        spawn "noctalia" "msg" "wallpaper-random";
+    }
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
     // in the end. To find an XKB name for a particular key, you may use a program
     // like wev.
@@ -371,7 +382,7 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+T { spawn "kitty"; }
-    Mod+Space repeat=false {
+    Mod+D repeat=false {
         spawn "noctalia" "msg" "panel-toggle" "launcher";
     }
     Mod+S repeat=false {
