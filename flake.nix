@@ -24,6 +24,7 @@
           ./hosts/desktop/hardware-configuration.nix
           ./hosts/desktop/configuration.nix
           ./hosts/desktop/gaming.nix
+          ./hosts/desktop/nvidia.nix
 
           home-manager.nixosModules.home-manager
           {
