@@ -1,3 +1,11 @@
 
 result
 result-*
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+*.ovpn
+
