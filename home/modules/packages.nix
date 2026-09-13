@@ -22,5 +22,16 @@
     lazydocker
     jq
     xwayland-satellite
+    discord
+    vesktop
+    cava
+    yazi
+    clock-rs
+    pipes-rs
+    lavat
+    cmatrix
+    cbonsai
+    asciiquarium-transparent
+    hollywood
   ];
 }

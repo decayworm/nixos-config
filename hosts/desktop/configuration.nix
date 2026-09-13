@@ -10,7 +10,40 @@
     "flakes"
   ];
 
-  programs.nix-ld.enable = true;  
+  programs.nix-ld = {
+    enable = true;
+
+    libraries = with pkgs; [
+      libxcb
+      libxcb-cursor
+      libxkbcommon
+      libxkbcommon.dev
+
+      xorg.xcbutil
+      xorg.xcbutilimage
+      xorg.xcbutilkeysyms
+      xorg.xcbutilrenderutil
+      xorg.xcbutilwm
+
+      xorg.libX11
+      xorg.libXext
+      xorg.libXrender
+      xorg.libXrandr
+      xorg.libXi
+      xorg.libXcursor
+      xorg.libXinerama
+
+      libGL
+      libGLU
+      mesa
+      vulkan-loader
+
+      freetype
+      fontconfig
+      dbus
+    ];
+  };
+  
   programs.fish.enable = true;
   programs.command-not-found.enable = false;
   programs.niri.enable = true;

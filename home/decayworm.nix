@@ -10,6 +10,8 @@
     ./modules/niri.nix
     ./modules/noctalia.nix
     ./modules/appearance.nix
+    ./modules/mango.nix
+    ./modules/fastfetch.nix
   ];
 
   home.username = "decayworm";

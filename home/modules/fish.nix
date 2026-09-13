@@ -2,10 +2,21 @@
   programs.fish = {
     enable = true;
 
+    interactiveShellInit = ''
+      set -g fish_greeting ""
+    '';
+    
+    shellAliases = {
+      cat = "bat";
+    };
+
     shellAbbrs = {
       ll = "eza -lah";
       la = "eza -a";
       lt = "eza --tree --level=2";
+     
+      ff = "fastfetch";
+      yz = "yazi";
 
       gs = "git status";
       ga = "git add";

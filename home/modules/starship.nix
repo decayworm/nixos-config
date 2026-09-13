@@ -1,4 +1,9 @@
+{ config, ... }:
+
 {
+  
+  home.file."${config.xdg.configHome}/starship.toml".force = true;
+
   programs.starship = {
     enable = true;
     enableFishIntegration = true;

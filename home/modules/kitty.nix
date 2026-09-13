@@ -13,6 +13,10 @@
     shellIntegration = {
       enableFishIntegration = true;
     };
+    
+    extraConfig = ''
+      include themes/noctalia.conf
+    '';
 
     settings = {
       # История терминала
@@ -26,7 +30,7 @@
       initial_window_height = 700;
 
       # Внешний вид
-      background_opacity = 0.95;
+      background_opacity = 0.90;
       dynamic_background_opacity = true;
 
       # Курсор
@@ -40,6 +44,8 @@
       tab_bar_style = "powerline";
       tab_powerline_style = "slanted";
       tab_title_template = "{title}";
+
+      hide_window_decorations = true;
     };
 
     keybindings = {
